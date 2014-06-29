@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
@@ -18,17 +17,17 @@ namespace JustEat.RecruitmentTest.App
             var restaurantsResult = new List<Restaurant>();
             foreach (var restaurant in data["Restaurants"])
             {
-                restaurantsResult.Add(MapToRestaurant(restaurant));
+                restaurantsResult.Add(MapSimpleRestaurant(restaurant));
             }
             return restaurantsResult;
         }
 
-        private Restaurant MapToRestaurant(JToken jsonRestaurant)
+        private Restaurant MapSimpleRestaurant(JToken jsonRestaurant)
         {
             return new Restaurant
             {
                 Name = Convert.ToString(jsonRestaurant["Name"]),
-                CuisineTypes = Convert.ToString(jsonRestaurant["CuisineTypes"].Select(x => x["Name"])),
+                CuisineTypes = Convert.ToString(jsonRestaurant["CuisineTypes"].First["Name"]),
                 RatingStars = Convert.ToDecimal(jsonRestaurant["RatingStars"]),
                 NumberOfRantings = Convert.ToInt32(jsonRestaurant["NumberOfRatings"])
             };

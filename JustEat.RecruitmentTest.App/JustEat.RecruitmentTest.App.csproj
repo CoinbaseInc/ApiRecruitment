@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleManager.cs" />
-    <Compile Include="IMapper.cs" />
-    <Compile Include="IInputManager.cs" />
-    <Compile Include="IOutPutManager.cs" />
-    <Compile Include="IRestaurantService.cs" />
-    <Compile Include="IWebRequestmanager.cs" />
+    <Compile Include="Interfaces\IMapper.cs" />
+    <Compile Include="Interfaces\IInputManager.cs" />
+    <Compile Include="Interfaces\IOutPutManager.cs" />
+    <Compile Include="Interfaces\IRestaurantService.cs" />
+    <Compile Include="Interfaces\IWebRequestmanager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />

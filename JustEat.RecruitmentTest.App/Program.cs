@@ -6,8 +6,12 @@ namespace JustEat.RecruitmentTest.App
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Press ANY key to exit...");
-            Console.ReadLine();
+            var restaurantMapper = new RestaurantMapper();
+            var webRequestManager = new WebRequestManager();
+            var restaurantService = new RestaurantService(webRequestManager, restaurantMapper);
+            var consoleManager = new ConsoleManager(restaurantService);
+
+            consoleManager.Start();
         }
     }
 }
